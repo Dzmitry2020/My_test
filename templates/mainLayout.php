@@ -36,15 +36,39 @@
                     <!--                    <a class="dropdown-item" href="#">Something else here</a>-->
                 </div>
             </li>
-            <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=show&type=classes">Классы</a>
+            <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : '') ?>">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Настройки
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="?action=show&type=students">Ученики</a>
+                    <a class="dropdown-item" href="?action=show&type=classes">Классы</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Критерии оценки</a>
+                </div>
             </li>
-            <li class="nav-item<?= $controllerType == 'students' ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=show&type=students">Ученики</a>
+            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : '') ?>">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Тесты
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="?action=show&type=tests">Список тестов</a>
+                    <a class="dropdown-item" href="#">Список ответов</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Результаты тестов</a>
+                </div>
             </li>
-            <li class="nav-item<?= $controllerType == 'tests' ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=show&type=tests">Тесты</a>
-            </li>
+<!--            <li class="nav-item--><?//= $controllerType == 'classes' ? ' active' : '' ?><!--">-->
+<!--                <a class="nav-link" href="?action=show&type=classes">Классы</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item--><?//= $controllerType == 'students' ? ' active' : '' ?><!--">-->
+<!--                <a class="nav-link" href="?action=show&type=students">Ученики</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item--><?//= $controllerType == 'tests' ? ' active' : '' ?><!--">-->
+<!--                <a class="nav-link" href="?action=show&type=tests">Тесты</a>-->
+<!--            </li>-->
         </ul>
     </div>
 </nav>
