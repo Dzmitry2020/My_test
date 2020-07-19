@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 19 2020 г., 12:58
+-- Время создания: Июл 19 2020 г., 17:04
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.5
 
@@ -80,8 +80,9 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `access_level`) VALUES
-(1, 'Администраторы', 9),
-(2, 'Пользователи', 0);
+(1, 'модераторы', 1),
+(2, 'гости', 0),
+(3, 'администраторы', 99);
 
 -- --------------------------------------------------------
 
@@ -143,12 +144,40 @@ INSERT INTO `students` (`id`, `class_id`, `fio`) VALUES
 
 CREATE TABLE `tests` (
   `id` int NOT NULL,
-  `date_edit` datetime NOT NULL COMMENT 'Дата изменения',
-  `author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Автор',
   `status` tinyint UNSIGNED NOT NULL COMMENT 'Статус',
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Название',
-  `duration` int UNSIGNED NOT NULL COMMENT 'Длительность'
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Название теста',
+  `duration` int UNSIGNED NOT NULL COMMENT 'Длительность',
+  `author` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Автор',
+  `date_edit` datetime NOT NULL COMMENT 'Дата изменения'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `tests`
+--
+
+INSERT INTO `tests` (`id`, `status`, `title`, `duration`, `author`, `date_edit`) VALUES
+(1, 1, 'Лексика английского языка', 300, 'Я', '2020-07-19 13:55:33'),
+(2, 1, 'Грамматика английского языка', 300, 'Я', '2020-07-19 13:56:35'),
+(3, 2, 'Запрещённый тест', 60, 'Я', '2020-07-19 13:57:22');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `teststate`
+--
+
+CREATE TABLE `teststate` (
+  `id` int NOT NULL,
+  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Статус'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `teststate`
+--
+
+INSERT INTO `teststate` (`id`, `name`) VALUES
+(1, 'доступен'),
+(2, 'отключен');
 
 -- --------------------------------------------------------
 
@@ -169,7 +198,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `group_id`, `login`, `password`, `email`) VALUES
-(1, 1, 'admin', '1', '');
+(1, 3, 'admin', '1', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -225,6 +254,12 @@ ALTER TABLE `tests`
   ADD UNIQUE KEY `idTask_UNIQUE` (`id`);
 
 --
+-- Индексы таблицы `teststate`
+--
+ALTER TABLE `teststate`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -251,7 +286,7 @@ ALTER TABLE `grades`
 -- AUTO_INCREMENT для таблицы `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `questions`
@@ -269,7 +304,13 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT для таблицы `tests`
 --
 ALTER TABLE `tests`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `teststate`
+--
+ALTER TABLE `teststate`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
