@@ -25,11 +25,10 @@ class TestsController extends AbstractTableController
     {
         parent::actionShow($data);
         $this->view->addData([
-            'placeNamesList' => $this->table->getNames(),
-            'taskStatusList' => $this->table->getStatus(),
+            'statusList' => $this->table->getStatus(),
             'table' => $this
                 ->table
-                ->getTask(
+                ->getTest(
                     Config::PAGE_SIZE,
                     $data['get']['page'] ?? 1
                 )
@@ -40,8 +39,7 @@ class TestsController extends AbstractTableController
     {
         parent::actionShowEdit($data);
         $this->view->addData([
-            'placeNamesList' => $this->table->getNames(),
-            'taskStatusList' => $this->table->getStatus()
+            'statusList' => $this->table->getStatus()
         ]);
     }
 }

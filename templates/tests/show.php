@@ -6,15 +6,14 @@
  * @var array $comments Комментарии к полям таблицы
  * @var string $type Имя контроллера
  * @var array $table
- * @var array $placeNamesList
- * @var array $taskStatusList
+ * @var array $statusList
  */
 
 use TexLab\Html\Html;
 
 echo Html::Pagination()
     ->setClass('pagination')
-    ->setUrlPrefix("?action=show&type=".$type)
+    ->setUrlPrefix("?action=show&type=" . $type)
     ->setPageCount($pageCount)
     ->setCurrentPage($this->data['currentPage'])
     ->html();
@@ -26,6 +25,7 @@ $delA = Html::A()->addInnerText('❌')->setClass('del');
 $edtA = Html::A()->addInnerText('✏')->setClass('edit');
 
 foreach ($table as &$row) {
+    $row['status'] = ($row['status'] == 2) ? '⛔' : '✅';
     $row[] = $delA
         ->setHref("?action=del&type=$type&id=$row[id]")
         ->html();
@@ -52,29 +52,16 @@ foreach ($fields as $field) {
         ->setInnerText($comments[$field])
         ->html());
 
-    if (($field == 'content') or ($field == 'comment')) {
-        $form->addInnerText(Html::Textarea()
+    if ($field == 'status') {
+        $form->addInnerText(Html::Select()
             ->setName($field)
             ->setId($field)
+            ->setData($statusList)
             ->html());
-    } elseif ($field == 'date') {
+    } else {
         $form->addInnerText(Html::Input()
-            ->setType('date')
             ->setName($field)
             ->setId($field)
-            ->setValue(date('Y-m-d'))
-            ->html());
-    } elseif ($field == 'place_id') {
-        $form->addInnerText(Html::Select()
-            ->setName($field)
-            ->setId($field)
-            ->setData($placeNamesList)
-            ->html());
-    } elseif ($field == 'status') {
-        $form->addInnerText(Html::Select()
-            ->setName($field)
-            ->setId($field)
-            ->setData($taskStatusList)
             ->html());
     }
 }
