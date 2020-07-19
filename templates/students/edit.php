@@ -25,7 +25,7 @@ foreach ($fields as $name => $field) {
         $form->addInnerText(Html::Select()
             ->setName($name)
             ->setId($name)
-            ->setSelectedValue($value)
+            ->setSelectedValue($field)
             ->setData($classesNamesList)
             ->html());}
     else {

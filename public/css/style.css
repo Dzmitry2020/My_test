@@ -28,6 +28,20 @@
     resize: none; /* Запрещаем изменять размер */
 }
 
+select.test-title-list {
+    width: 350px;
+}
+
+textarea.question {
+    width: 350px;
+    height: 60px;
+    background-color: #f3c7b6;
+}
+
+input[type='text'].answer{
+    width: 350px;
+}
+
 .form input[type='checkbox']  {
     background-color: wheat;
     display: inline;

@@ -36,7 +36,7 @@
                     <!--                    <a class="dropdown-item" href="#">Something else here</a>-->
                 </div>
             </li>
-            <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : '') ?>">
+            <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : (($controllerType == 'grades') ? ' active' : '')) ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Настройки
@@ -45,19 +45,19 @@
                     <a class="dropdown-item" href="?action=show&type=students">Ученики</a>
                     <a class="dropdown-item" href="?action=show&type=classes">Классы</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Критерии оценки</a>
+                    <a class="dropdown-item" href="?action=show&type=grades">Критерии оценки</a>
                 </div>
             </li>
-            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : '') ?>">
+            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : (($controllerType == 'results') ? ' active' : '')) ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Тесты
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?action=show&type=tests">Список тестов</a>
-                    <a class="dropdown-item" href="#">Список ответов</a>
+                    <a class="dropdown-item" href="?action=show&type=questions">Список вопросов</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Результаты тестов</a>
+                    <a class="dropdown-item" href="?action=show&type=results">Результаты тестов</a>
                 </div>
             </li>
 <!--            <li class="nav-item--><?//= $controllerType == 'classes' ? ' active' : '' ?><!--">-->
