@@ -1,0 +1,15 @@
+{
+  "require": {
+    "texlab/mydb": "^0.0.4",
+    "ext-mysqli": "*",
+    "texlab/html": "^0.04"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controller\\": "src/Controller",
+      "Core\\": "src/Core",
+      "View\\": "src/View",
+      "Model\\": "src/Model"
+    }
+  }
+}
