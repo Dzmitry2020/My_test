@@ -10,7 +10,7 @@ class QuestionsModel extends DbEntity
     public function getTests()
     {
         $res = [];
-        foreach ($this->runSQL("SELECT `id`, `title` FROM `tests`") as $row) {
+        foreach ($this->runSQL("SELECT `id`, `title` FROM `tests` ORDER BY `title`") as $row) {
             $res[$row['id']] = $row['title'];
         }
         return $res;

@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 /** @var int $pageCount Количество страниц
  * @var array $fields Список полей таблицы
@@ -81,7 +82,6 @@ foreach ($fields as $field) {
             ->setId($field)
             ->html());
     }
-
 }
 
 $form->addInnerText(
@@ -92,3 +92,9 @@ $form->addInnerText(
 );
 
 echo $form->html();
+
+//$str = "1";
+//if (isset($_SESSION['a'])) {
+//    $str = $_SESSION['a'];
+//}
+//echo '$str = ' . $str;

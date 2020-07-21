@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /** @var int $id
  * @var string $type
  * @var array $fields
@@ -9,6 +11,7 @@
  */
 
 use TexLab\Html\Html;
+
 
 $form = Html::Form()
     ->setMethod('POST')

@@ -85,6 +85,7 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/my.js"></script>
+<script src="js/setsel.js"></script>
 </body>
 
 </html>
