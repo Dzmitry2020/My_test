@@ -60,9 +60,9 @@
                     <a class="dropdown-item" href="?action=show&type=results">Результаты тестов</a>
                 </div>
             </li>
-<!--            <li class="nav-item--><?//= $controllerType == 'classes' ? ' active' : '' ?><!--">-->
-<!--                <a class="nav-link" href="?action=show&type=classes">Классы</a>-->
-<!--            </li>-->
+            <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">
+                <a class="nav-link" href="?action=show&type=login">Logform</a>
+            </li>
 <!--            <li class="nav-item--><?//= $controllerType == 'students' ? ' active' : '' ?><!--">-->
 <!--                <a class="nav-link" href="?action=show&type=students">Ученики</a>-->
 <!--            </li>-->

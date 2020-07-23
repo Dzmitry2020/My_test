@@ -28,6 +28,7 @@ class Dispatcher
 
     public function run()
     {
+
         $this->view->setLayout('mainLayout');
 
         if (class_exists($this->controllerName)) {
