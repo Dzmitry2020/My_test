@@ -64,13 +64,8 @@ class Table extends Runner implements CRUDInterface
 
     public function add(array $data): int
     {
-        $str = "'";
-        foreach ($data as $value) {
-            $str .= str_replace("'", "\'", $value) . "', '";
-        }
-        $str = substr_replace($str, '', strlen($str) - 3, 3);
         $this->query("INSERT INTO $this->tableName (" . implode(', ', array_keys($data)) .
-            ") VALUES(" . $str . ");");
+            ") VALUES('" . implode("', '", $data) . "');");
 
         return $this->mysqli->insert_id;
     }
@@ -80,7 +75,6 @@ class Table extends Runner implements CRUDInterface
         $arrayConditions = [];
 
         foreach ($conditions as $field => $value) {
-
             $arrayConditions[] = "$field = '$value'";
         }
 
@@ -98,8 +92,7 @@ class Table extends Runner implements CRUDInterface
     {
         $fields_values = [];
         foreach ($data as $k => $v) {
-            $s = str_replace("'", "\'", $v);
-            $fields_values[] = "$k = '$s'";
+            $fields_values[] = "$k = '$v'";
         }
 
         $this->query("UPDATE $this->tableName SET " . implode(", ", $fields_values) .

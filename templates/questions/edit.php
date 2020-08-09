@@ -30,7 +30,7 @@ foreach ($fields as $field => $value) {
             ->setName($field)
             ->setId($field)
             ->setClass('test-title-list')
-            ->setSelectedValue($value)
+            ->setSelectedValues([$value])
             ->setData($testsTitleList)
             ->html());
     } elseif ($field == 'content') {
@@ -45,7 +45,7 @@ foreach ($fields as $field => $value) {
         $form->addInnerText(Html::Select()
             ->setName($field)
             ->setId($field)
-            ->setSelectedValue($value)
+            ->setSelectedValues([$value])
             ->setData($answerVariant)
             ->html());
     } else {
@@ -65,6 +65,7 @@ echo $form->addInnerText(Html::Input()
     ->html())
     ->addInnerText(Html::Input()
         ->setType('submit')
+        ->setClass('btn btn-primary')
         ->setValue('OK')
         ->html())
     ->html();

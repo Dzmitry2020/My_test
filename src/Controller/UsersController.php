@@ -45,5 +45,16 @@ class UsersController extends AbstractTableController
         ]);
     }
 
+    public function actionAdd(array $data)
+    {
+        $data['post']['password'] = md5(md5($data['post']['password']) . Config::SALT);
+        parent::actionAdd($data);
+    }
+
+    public function actionEdit(array $data)
+    {
+        $data['post']['password'] = md5(md5($data['post']['password']) . Config::SALT);
+        parent::actionEdit($data);
+    }
 
 }

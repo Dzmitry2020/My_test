@@ -11,7 +11,7 @@
 
 use TexLab\Html\Html;
 
-if ($pageCount > 1){
+if ($pageCount > 1) {
     echo Html::Pagination()
         ->setClass('pagination')
         ->setUrlPrefix("?action=show&type=" . $type)
@@ -20,26 +20,26 @@ if ($pageCount > 1){
         ->html();
 }
 
-$comments[] = 'Удаление';
-$comments[] = 'Правка';
+$comments[] = 'Action';
 
-$delA = Html::A()->addInnerText('❌')->setClass('del');
 $edtA = Html::A()->addInnerText('✏')->setClass('edit');
+$delA = Html::A()->addInnerText('❌')->setClass('del');
 
 foreach ($table as &$row) {
 
-    $row[] = $delA
-        ->setHref("?action=del&type=$type&id=$row[id]")
-        ->html();
     $row[] = $edtA
-        ->setHref("?action=showedit&type=$type&id=$row[id]")
-        ->html();
+            ->setHref("?action=showedit&type=$type&id=$row[id]")
+            ->html()
+        . "\n"
+        . $delA
+            ->setHref("?action=del&type=$type&id=$row[id]")
+            ->html();
 }
 
 echo Html::Table()
     ->setHeaders($comments)
     ->setData($table)
-    ->setClass('table')
+    ->setClass('table table-striped')
     ->html();
 
 $form = Html::Form()
@@ -67,11 +67,12 @@ foreach ($fields as $field) {
             ->html());
     }
 }
-    $form->addInnerText(
-        Html::Input()
-            ->setType('submit')
-            ->setValue('Добавить')
-            ->html()
-    );
+$form->addInnerText(
+    Html::Input()
+        ->setType('submit')
+        ->setClass('btn btn-primary')
+        ->setValue('Add')
+        ->html()
+);
 
-    echo $form->html();
+echo $form->html();

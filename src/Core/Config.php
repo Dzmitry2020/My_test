@@ -9,4 +9,5 @@ class Config
     const MYSQL_PASSWORD = 'root';
     const MYSQL_DATABASE = 'mytest';
     const PAGE_SIZE = 5;
+    public const SALT = 'my_secret_word';
 }

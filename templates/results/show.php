@@ -22,7 +22,7 @@ if ($pageCount > 1) {
 echo Html::Table()
     ->setHeaders($comments)
     ->setData($table)
-    ->setClass('table')
+    ->setClass('table table-striped')
     ->html();
 
 $form = Html::Form()
@@ -33,6 +33,7 @@ $form = Html::Form()
 //$form->addInnerText(
 //    Html::Input()
 //        ->setType('button')
+//        ->setClass('btn btn-primary')
 //        ->setValue('Распечатать')
 //        ->html()
 //);

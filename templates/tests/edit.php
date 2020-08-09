@@ -25,7 +25,7 @@ foreach ($fields as $name => $value) {
         $form->addInnerText(Html::Select()
             ->setName($name)
             ->setId($name)
-            ->setSelectedValue($value)
+            ->setSelectedValues([$value])
             ->setData($statusList)
             ->html());
     } elseif ($name == 'title') {
@@ -50,6 +50,7 @@ echo $form->addInnerText(Html::Input()
     ->html())
     ->addInnerText(Html::Input()
         ->setType('submit')
+        ->setClass('btn btn-primary')
         ->setValue('OK')
         ->html())
     ->html();

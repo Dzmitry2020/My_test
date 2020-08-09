@@ -4,20 +4,20 @@ use TexLab\Html\Html;
 
 /**
  * @var string $type Имя контроллера
+ * @var string $action
  */
 
 $form = Html::Form()
     ->setMethod('POST')
-    ->setAction("?action=add&type=$type")
-    ->setClass('form');
+    ->setAction($action);
 
 $form->addInnerText(Html::Label()
     ->setInnerText("Имя:")
     ->html());
 
 $form->addInnerText(Html::Input()
-    ->setName("name")
-    ->setId("name")
+    ->setName("login")
+    ->setId("login")
     ->html());
 
 $form->addInnerText(Html::Label()
@@ -33,6 +33,7 @@ $form->addInnerText(Html::Input()
 $form->addInnerText(
     Html::Input()
         ->setType('submit')
+        ->setClass('btn btn-primary')
         ->setValue('Войти')
         ->html()
 );

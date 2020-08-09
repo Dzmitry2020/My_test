@@ -22,26 +22,26 @@ if ($pageCount > 1) {
         ->html();
 }
 
-$comments[] = 'Удаление';
-$comments[] = 'Правка';
+$comments[] = 'Action';
 
-$delA = Html::A()->addInnerText('❌')->setClass('del');
 $edtA = Html::A()->addInnerText('✏')->setClass('edit');
+$delA = Html::A()->addInnerText('❌')->setClass('del');
 
 foreach ($table as &$row) {
     $row['ans_right'] = $answerVariant[$row['ans_right']];
-    $row[] = $delA
-        ->setHref("?action=del&type=$type&id=$row[id]")
-        ->html();
     $row[] = $edtA
-        ->setHref("?action=showedit&type=$type&id=$row[id]")
-        ->html();
+            ->setHref("?action=showedit&type=$type&id=$row[id]")
+            ->html()
+        . "\n"
+        . $delA
+            ->setHref("?action=del&type=$type&id=$row[id]")
+            ->html();
 }
 
 echo Html::Table()
     ->setHeaders($comments)
     ->setData($table)
-    ->setClass('table')
+    ->setClass('table table-striped')
     ->html();
 
 $form = Html::Form()
@@ -87,14 +87,9 @@ foreach ($fields as $field) {
 $form->addInnerText(
     Html::Input()
         ->setType('submit')
-        ->setValue('Добавить')
+        ->setClass('btn btn-primary')
+        ->setValue('Add')
         ->html()
 );
 
 echo $form->html();
-
-//$str = "1";
-//if (isset($_SESSION['a'])) {
-//    $str = $_SESSION['a'];
-//}
-//echo '$str = ' . $str;
