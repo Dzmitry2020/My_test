@@ -14,9 +14,7 @@ class LoginController extends AbstractController
     public function __construct(View $view, mysqli $link)
     {
         parent::__construct($view);
-        $this->table = new LoginModel(
-            $link
-        );
+        $this->table = new LoginModel($link);
     }
 
     public function actionLoginForm()
@@ -41,9 +39,9 @@ class LoginController extends AbstractController
         if (!empty($user)) {
             $_SESSION['user'] = $user;
 
-            $this->redirect('?action=default&type=default');
+            $this->redirect('?action=show&type=results');
         } else {
-            $this->redirect('/');
+            $this->redirect('?action=defaultform&type=default');
         }
     }
 

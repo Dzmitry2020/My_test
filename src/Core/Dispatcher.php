@@ -2,15 +2,16 @@
 
 namespace Core;
 
+use mysqli;
 use TexLab\MyDB\DB;
 use View\View;
 
 class Dispatcher
 {
-    protected $view;
-    protected $controllerName;
-    protected $actionName;
-    protected $link;
+    protected View $view;
+    protected string $controllerName;
+    protected string $actionName;
+    protected mysqli $link;
 
     public function __construct()
     {
@@ -29,7 +30,7 @@ class Dispatcher
     public function run()
     {
         $blacklist = include "blacklist.php";
-        $cod = $_SESSION['user']['cod'] ?? 'guest';
+        $cod = $_SESSION['user']['cod'] ?? 'student';
 
         if ($this->actionName == 'loginform') {
             $this->view->setLayout('plainLayout');

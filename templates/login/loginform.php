@@ -12,7 +12,7 @@ $form = Html::Form()
     ->setAction($action);
 
 $form->addInnerText(Html::Label()
-    ->setInnerText("Имя:")
+    ->setInnerText("Login:")
     ->html());
 
 $form->addInnerText(Html::Input()
@@ -21,7 +21,7 @@ $form->addInnerText(Html::Input()
     ->html());
 
 $form->addInnerText(Html::Label()
-    ->setInnerText("Пароль:")
+    ->setInnerText("Password:")
     ->html());
 
 $form->addInnerText(Html::Input()
@@ -34,7 +34,7 @@ $form->addInnerText(
     Html::Input()
         ->setType('submit')
         ->setClass('btn btn-primary')
-        ->setValue('Войти')
+        ->setValue('Sign in')
         ->html()
 );
 

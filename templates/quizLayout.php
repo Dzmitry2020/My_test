@@ -7,31 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>English quiz</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.css" >
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-<?php
-
-switch ($_SESSION['user']['cod']) {
-    case 'admin':
-        include 'adminmenu.php';
-        break;
-    case 'teacher':
-        include 'teachermenu.php';
-        break;
-    default:
-        include 'guestmenu.php';
-}
-?>
-
 <main role="main" class="container">
-    <div class="container-fluid" style="margin-top:80px">
+    <div class="container" style="margin-top:80px">
         <?php
         $this->body();
         ?>
@@ -41,8 +26,6 @@ switch ($_SESSION['user']['cod']) {
 <script src="js/jquery-3.5.1.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/setsel.js"></script>
-<script src="js/del_confirm.js"></script>
 </body>
 
 </html>

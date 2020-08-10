@@ -6,39 +6,37 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item<?= ($controllerType == 'default') ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=default&type=default"><i class='fa fa-home'></i> Главная</a>
+            <li class="nav-item<?= ($controllerType == 'results') ? ' active' : '' ?>">
+                <a class="nav-link" href="?action=show&type=results">Results</a>
             </li>
             <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : (($controllerType == 'grades') ? ' active' : '')) ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Настройки
+                    Settings
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?action=show&type=students">Ученики</a>
-                    <a class="dropdown-item" href="?action=show&type=classes">Классы</a>
+                    <a class="dropdown-item" href="?action=show&type=students">Students</a>
+                    <a class="dropdown-item" href="?action=show&type=classes">Classroom</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="?action=show&type=grades">Критерии оценки</a>
+                    <a class="dropdown-item" href="?action=show&type=grades">Grades</a>
                 </div>
             </li>
-            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : (($controllerType == 'results') ? ' active' : '')) ?>">
+            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : '') ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Тесты
+                    Quizes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?action=show&type=tests">Список тестов</a>
-                    <a class="dropdown-item" href="?action=show&type=questions">Список вопросов</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="?action=show&type=results">Результаты тестов</a>
+                    <a class="dropdown-item" href="?action=show&type=tests">Topics</a>
+                    <a class="dropdown-item" href="?action=show&type=questions">Questions</a>
                 </div>
             </li>
             <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=logout&type=login">Logout</a>
+                <a class="nav-link" href="?action=logout&type=login">Logout <i class='fa fa-sign-out-alt'></i></a>
             </li>
         </ul>
     </div>
     <span class="navbar-text">
-    <?= empty($_SESSION['user']) ? '' : $_SESSION['user']['name'] ?>
+    <?= empty($_SESSION['user']) ? '' : $_SESSION['user']['name'] .' ('. $_SESSION['user']['cod'] . ')'?>
   </span>
 </nav>

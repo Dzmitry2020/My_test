@@ -6,8 +6,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item<?= ($controllerType == 'default') ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=default&type=default"><i class='fa fa-home'></i> Main</a>
+            <li class="nav-item<?= ($controllerType == 'results') ? ' active' : '' ?>">
+                <a class="nav-link" href="?action=show&type=results">Results</a>
             </li>
             <li class="nav-item dropdown<?= ($controllerType == 'users') ? ' active' : (($controllerType == 'groups') ? ' active' : '') ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -17,8 +17,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?action=show&type=users">Users</a>
                     <a class="dropdown-item" href="?action=show&type=groups">Groups</a>
-                    <!--                    <div class="dropdown-divider"></div>-->
-                    <!--                    <a class="dropdown-item" href="#">Something else here</a>-->
                 </div>
             </li>
             <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : (($controllerType == 'grades') ? ' active' : '')) ?>">
@@ -33,7 +31,7 @@
                     <a class="dropdown-item" href="?action=show&type=grades">Grades</a>
                 </div>
             </li>
-            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : (($controllerType == 'results') ? ' active' : '')) ?>">
+            <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : '') ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Quizes
@@ -41,8 +39,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?action=show&type=tests">Topics</a>
                     <a class="dropdown-item" href="?action=show&type=questions">Questions</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="?action=show&type=results">Results</a>
                 </div>
             </li>
             <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">
@@ -51,6 +47,6 @@
         </ul>
     </div>
     <span class="navbar-text">
-    <?= empty($_SESSION['user']) ? '' : $_SESSION['user']['name'] ?>
+    <?= empty($_SESSION['user']) ? '' : $_SESSION['user']['name'] .' ('. $_SESSION['user']['cod'] . ')'?>
   </span>
 </nav>

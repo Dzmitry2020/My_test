@@ -2,11 +2,11 @@
 
 return [
     'admin' => [],
-    'moderator' => [
+    'teacher' => [
         'groups',
         'users'
     ],
-    'guest' => [
+    'student' => [
         'classes',
         'grades',
         'groups',
