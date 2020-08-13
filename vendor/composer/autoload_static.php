@@ -16,11 +16,6 @@ class ComposerStaticInit0852d1eea8f16b23039329fde007f5ff
             'TexLab\\MyDB\\' => 12,
             'TexLab\\Html\\' => 12,
         ),
-        'S' => 
-        array (
-            'Soufraz\\Tests\\' => 14,
-            'Soufraz\\' => 8,
-        ),
         'M' => 
         array (
             'Model\\' => 6,
@@ -44,14 +39,6 @@ class ComposerStaticInit0852d1eea8f16b23039329fde007f5ff
         'TexLab\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/texlab/html/src',
-        ),
-        'Soufraz\\Tests\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/soufraz/quiz-in-session/tests',
-        ),
-        'Soufraz\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/soufraz/quiz-in-session/src',
         ),
         'Model\\' => 
         array (

@@ -4,48 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90a73b953029550139e3804749395809",
+    "content-hash": "ad560e926a3634f8a02223ff587e787f",
     "packages": [
-        {
-            "name": "soufraz/quiz-in-session",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Soufraz/quiz-in-session.git",
-                "reference": "d17fb356db425606b01ebd52b2ca9c2790fedfde"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Soufraz/quiz-in-session/zipball/d17fb356db425606b01ebd52b2ca9c2790fedfde",
-                "reference": "d17fb356db425606b01ebd52b2ca9c2790fedfde",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0|~5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Soufraz\\": "src",
-                    "Soufraz\\Tests\\": "tests"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rafael Soufraz",
-                    "email": "soufraz@gmail.com"
-                }
-            ],
-            "description": "A simple php package quiz core that allows the creation of questions, alternatives and choice of answers in a very easy way.",
-            "time": "2017-04-16T13:33:13+00:00"
-        },
         {
             "name": "texlab/html",
             "version": "v0.09",
@@ -127,9 +87,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "soufraz/quiz-in-session": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
