@@ -16,7 +16,7 @@ FROM (SELECT `results`.`id`, `results`.`test_id`, `results`.`student_id`, `resul
 FROM `results`, `students` WHERE `results`.`student_id` = `students`.`id`) AS `A`, `tests`
 WHERE `A`.`test_id` = `tests`.`id`) AS `B`, `classes`")
             ->setWhere("`B`.`class_id` = `classes`.`id`")
-            ->setOrderBy("`B`.`title`, `B`.`result`")
+            ->setOrderBy("`classes`.`name`, `B`.`fio`")
             ->setPageSize($pageSize)
             ->getPage($page);
     }

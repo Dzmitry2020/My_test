@@ -55,7 +55,6 @@ class QuizController extends AbstractController
             $_SESSION['topic'] = $this->table->getTopic($_SESSION['topicId']);
             $_SESSION['questions'] = $this->table->getQuestions($_SESSION['topicId']);
             $_SESSION['questions'][$_SESSION['qNumber']]['answer'] = '';
-            date_default_timezone_set(Config::TIME_ZONE);
             $_SESSION['timestart'] = time();
             $_SESSION['timefinish'] = date('Y-m-d H:i:s', $_SESSION['timestart'] + 60);
             $_SESSION['start'] = 0;
@@ -108,7 +107,7 @@ class QuizController extends AbstractController
             ->view
             ->setFolder('quiz')
             ->setTemplate('resultform')
-            ->setLayout("plainLayout")
+            ->setLayout("resultLayout")
             ->addData([
                 'action' => '?action=defaultform&type=default',
             ]);

@@ -1,6 +1,15 @@
 /*.table, .table td, .table th {*/
 /*    border: 2px solid black;*/
 /*}*/
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    background: url("../img/Waves.jpg");
+    background-size: cover;
+}
 
 .table {
     border: 1px solid steelblue;
@@ -32,7 +41,7 @@ select.test-title-list {
 .form textarea.question {
     width: 400px;
     height: 80px;
-    background-color: #f3c7b6;
+    background-color: white;
 }
 
 input[type='text'].answer {
@@ -40,7 +49,7 @@ input[type='text'].answer {
 }
 
 .form input[type='checkbox'] {
-    background-color: #fce7d5;
+    background-color: white;
     display: inline;
     margin: 10px;
 }

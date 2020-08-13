@@ -7,28 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item<?= ($controllerType == 'results') ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=show&type=results">Results</a>
+                <a class="nav-link" href="?action=show&type=results"><i class='fa fa-award'></i> Results</a>
             </li>
             <li class="nav-item dropdown<?= ($controllerType == 'classes') ? ' active' : (($controllerType == 'students') ? ' active' : (($controllerType == 'grades') ? ' active' : '')) ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Settings
+                    <i class='fa fa-cog'></i> Settings
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?action=show&type=students">Students</a>
-                    <a class="dropdown-item" href="?action=show&type=classes">Classroom</a>
+                    <a class="dropdown-item" href="?action=show&type=students"><i class='fa fa-user-graduate'></i> Students</a>
+                    <a class="dropdown-item" href="?action=show&type=classes"><i class='fa fa-users'></i> Class</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="?action=show&type=grades">Grades</a>
+                    <a class="dropdown-item" href="?action=show&type=grades"><i class='fa fa-sliders-h'></i> Grades</a>
                 </div>
             </li>
             <li class="nav-item dropdown<?= ($controllerType == 'tests') ? ' active' : (($controllerType == 'questions') ? ' active' : '') ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Quizes
+                    <i class='fa fa-list'></i> Tests
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?action=show&type=tests">Topics</a>
-                    <a class="dropdown-item" href="?action=show&type=questions">Questions</a>
+                    <a class="dropdown-item" href="?action=show&type=tests"><i class='fa fa-tasks'></i> Topics</a>
+                    <a class="dropdown-item" href="?action=show&type=questions"><i class='fa fa-question-circle'></i> Questions</a>
                 </div>
             </li>
             <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">

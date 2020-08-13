@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item<?= ($controllerType == 'default') ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=default&type=default"><i class='fa fa-home'></i> Главная</a>
+                <a class="nav-link" href="?action=default&type=default"><i class='fa fa-home'></i> Test select</a>
             </li>
             <li class="nav-item<?= $controllerType == 'classes' ? ' active' : '' ?>">
-                <a class="nav-link" href="?action=logout&type=login">Войти <i class='fa fa-sign-in-alt'></i></a>
+                <a class="nav-link" href="?action=logout&type=login">Sign in <i class='fa fa-sign-in-alt'></i></a>
             </li>
         </ul>
     </div>

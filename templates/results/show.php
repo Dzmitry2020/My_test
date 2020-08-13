@@ -19,6 +19,12 @@ if ($pageCount > 1) {
         ->html();
 }
 
+unset($comments['id']);
+unset($comments['student_id']);
+
+$comments = ['class' => 'Class'] + $comments;
+$comments = ['student_id' => 'Student'] + $comments;
+
 echo Html::Table()
     ->setHeaders($comments)
     ->setData($table)

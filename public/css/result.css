@@ -11,38 +11,18 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Montserrat, sans-serif;
-    background: url("../img/Boy.jpg") right bottom no-repeat;
+    background: url("../img/Check.jpg") right bottom no-repeat;
     background-size: 25% 50%;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
-}
-
-input {
-    margin: 0 0 20px 0;
-    padding: 5px;
-    width: auto;
+    width: 350px;
 }
 
 input[type='submit'], input[type='button']{
     margin: 20px 0;
     padding: 5px;
     width: auto;
-}
-
-.form select{
-    margin: 0 0 15px 0;
-    padding: 5px;
-}
-
-label {
-    padding: 0;
-}
-
-A {
-    text-align: center;
-    justify-content: center;
 }
