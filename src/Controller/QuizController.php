@@ -38,7 +38,10 @@ class QuizController extends AbstractController
             $_SESSION['timestart'] = time();
         }
         if (empty($_SESSION['timefinish'])) {
-            $_SESSION['timefinish'] = date('Y-m-d H:i:s', time() + 60);
+            $_SESSION['timefinish'] = date(
+                'Y-m-d H:i:s',
+                time() + $this->table->getTopicDuration($_SESSION['topicId'])
+            );
         }
     }
 

@@ -1,11 +1,11 @@
-<!--<div>-->
-<!--    <SCRIPT-->
-<!--            SRC="countdown.php?timezone=Europe/Minsk&countto=--><?//=$_SESSION['timefinish']?><!--&do=r&data=?action=result&type=quiz">-->
-<!--    </SCRIPT>-->
-<!--</div><br>-->
+<div id="cd">
+    <SCRIPT
+            SRC="countdown.php?timezone=Europe/Minsk&countto=<?=$_SESSION['timefinish']?>&do=r&data=<?=rawurlencode('?action=result&type=quiz')?>">
+    </SCRIPT>
+</div><br>
 
-<h3><?= $_SESSION['topic'] ?> (question <?= ($_SESSION['qNumber']+1) ?> from <?= count($_SESSION['questions']) ?>)</h3>
-<h4><?= $_SESSION['questions'][$_SESSION['qNumber']]['content'] ?></h4>
+<h3><?= $_SESSION['topic'] ?> (question <?= ($_SESSION['qNumber']+1) ?> from <?=count($_SESSION['questions'])?>)</h3>
+<div> <h4><?= $_SESSION['questions'][$_SESSION['qNumber']]['content'] ?></h4></div>
 
 
 <?php

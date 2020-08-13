@@ -1,8 +1,7 @@
-<div class="kkk"><h4>
-        Correct answers: <?= $_SESSION['right'] ?> of <?= count($_SESSION['questions']) ?></b>
-        &nbsp;(<b><?= $_SESSION['quizresult'] ?>%</b>) <br>
-
-    </h4></div>
+<div><h2>
+        Correct answers: <?= $_SESSION['right'] ?> of <?= count($_SESSION['questions']) ?></b> <br>
+        &nbsp;<b><?=$_SESSION['quizresult']?>%</b><br>
+    </h2></div>
 
 <?php
 

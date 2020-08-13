@@ -29,6 +29,12 @@ SQL
         return $res[0]['title'];
     }
 
+    public function getTopicDuration($topicId): int
+    {
+        $res = $this->runSQL('SELECT `duration` FROM `tests` WHERE `id`=' . $topicId);
+        return $res[0]['duration'];
+    }
+
     public function getQuestions($topicId): array
     {
         $arr = $this->runSQL(<<<'TAG'

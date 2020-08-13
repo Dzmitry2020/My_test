@@ -5,11 +5,11 @@
 }
 
 body {
-    /*height: 100vh;*/
+    height: 100%;
     display: flex;
-    /*align-items: center;*/
-    /*justify-content: center;*/
     font-family: Montserrat, sans-serif;
+    background: url("../img/Waves.jpg");
+    background-size: cover;
 }
 
 label {
@@ -23,15 +23,12 @@ input[type='submit'], input[type='button'] {
 
 #cd {
     margin: auto;
-    height: 20px;
     width: auto;
-    /*font-family: "Courier New", Courier, mono, serif;*/
-    font-size: 24px;
-    color: #0d00fe;
+    font-size: xx-large;
+    color: #070077;
     text-align: center;
     align-items: center;
     justify-content: center;
-    /*font-weight: bold;*/
-    /*background-image: url(back.jpg);*/
+    font-weight: bold;
     vertical-align: middle;
 }
