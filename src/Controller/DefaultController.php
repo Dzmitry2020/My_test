@@ -28,6 +28,13 @@ class DefaultController extends AbstractController
                 'studentsList' => $this->table->getStudents(),
                 'topicsList' => $this->table->getTopics()
             ]);
+        unset($_SESSION['student']);
+        unset($_SESSION['qNumber']);
+        unset($_SESSION['topicId']);
+        unset($_SESSION['questions']);
+        unset($_SESSION['start']);
+        unset($_SESSION['timestart']);
+        unset($_SESSION['timefinish']);
     }
 
     public function actionDefault($controllerData)

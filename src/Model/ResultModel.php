@@ -17,7 +17,7 @@ FROM `results`, `students` WHERE `results`.`student_id` = `students`.`id`) AS `A
 WHERE `A`.`test_id` = `tests`.`id`) AS `B`, `classes`")
             ->setWhere("`B`.`class_id` = `classes`.`id`")
             ->setOrderBy("`B`.`title`, `B`.`result`")
-            ->setPageSize(10)
+            ->setPageSize($pageSize)
             ->getPage($page);
     }
 }

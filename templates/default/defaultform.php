@@ -30,8 +30,8 @@ $form->addInnerText(Html::Label()
     ->html());
 
 $form->addInnerText(Html::Select()
-    ->setName('topic')
-    ->setId('topic')
+    ->setName('topicId')
+    ->setId('topicId')
     ->setData($topicsList)
     ->html());
 
@@ -47,11 +47,6 @@ $form->addInnerText(
     Html::A()
         ->setHref("/")
         ->addInnerText('Login'
-//            Html::Input()
-//                ->setType('button')
-//                ->setClass('btn btn-secondary')
-//                ->setValue('Login')
-//                ->html()
         )
         ->html()
 );

@@ -8,7 +8,7 @@ use TexLab\MyDB\DbEntity;
 class TestModel extends DbEntity
 
 {
-    public function getStatus()
+    public function getStatus(): array
     {
         $res = [];
         foreach ($this->runSQL('SELECT `id`, `name` FROM teststate') as $row) {
@@ -17,14 +17,29 @@ class TestModel extends DbEntity
         return $res;
     }
 
-    public function getTest($pageSize, $page)
+    /**
+     * @param int $topicNumber
+     * @return int
+     */
+    public function getQuestionsQuantity(int $topicNumber): int
     {
-        return $this
+        return count($this->runSQL('SELECT * FROM `questions` WHERE `test_id`='.$topicNumber));
+    }
+
+    public function getTest($pageSize, $page): array
+    {   $arr = $this
             ->setSelect('*')
             ->setFrom('tests')
-            ->setOrderBy('tests.status, tests.title')
+            ->setOrderBy('status, id')
             ->setPageSize($pageSize)
             ->getPage($page);
+        $res = $arr;
+        foreach ($arr as $key => $row){
+            $res[$key]['questionsQuantity'] = $this->getQuestionsQuantity($row['id']);
+        }
+        return $res;
     }
+
+
 
 }

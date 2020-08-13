@@ -10,16 +10,24 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Montserrat, sans-serif;
+    /*background-image: url("/img/boy.jpg");*/
+    /*background-repeat: no-repeat;*/
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
 }
 
 input {
     margin: 0 0 20px 0;
+    padding: 5px;
+    width: auto;
+}
+
+input[type='submit'], input[type='button']{
+    margin: 20px 0;
     padding: 5px;
     width: auto;
 }

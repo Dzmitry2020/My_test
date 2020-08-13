@@ -20,6 +20,7 @@ if ($pageCount > 1) {
         ->html();
 }
 
+$comments[] = 'Questions';
 $comments[] = 'Action';
 
 $delA = Html::A()->addInnerText('❌')->setClass('del');

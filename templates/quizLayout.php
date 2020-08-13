@@ -10,13 +10,13 @@
     <title>English quiz</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 
 <body>
 
-<main role="main" class="container">
-    <div class="container" style="margin-top:80px">
+<main role="main" class="container" style="margin-top:70px">
+    <div class="container">
         <?php
         $this->body();
         ?>
