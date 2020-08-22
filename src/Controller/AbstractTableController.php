@@ -83,11 +83,21 @@ abstract class AbstractTableController extends AbstractController
     {
         $editData = $data['post'];
         unset($editData['id']);
-        $editData['content'] = $this->alink->real_escape_string($editData['content']);
-        $editData['answer1'] = $this->alink->real_escape_string($editData['answer1']);
-        $editData['answer2'] = $this->alink->real_escape_string($editData['answer2']);
-        $editData['answer3'] = $this->alink->real_escape_string($editData['answer3']);
-        $editData['answer4'] = $this->alink->real_escape_string($editData['answer4']);
+        if (!empty($editData['content'])){
+            $editData['content'] = $this->alink->real_escape_string($editData['content']);
+        }
+        if (!empty($editData['answer1'])){
+            $editData['answer1'] = $this->alink->real_escape_string($editData['answer1']);
+        }
+        if (!empty($editData['answer2'])){
+            $editData['answer2'] = $this->alink->real_escape_string($editData['answer2']);
+        }
+        if (!empty($editData['answer3'])){
+            $editData['answer3'] = $this->alink->real_escape_string($editData['answer3']);
+        }
+        if (!empty($editData['answer4'])){
+            $editData['answer4'] = $this->alink->real_escape_string($editData['answer4']);
+        }
         $this->table->edit(['id' => $data['post']['id']], $editData);
         $this->redirect('?action=show&type=' . $this->getClassName());
     }

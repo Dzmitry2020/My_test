@@ -16,7 +16,7 @@ class UserModel extends DbEntity
         return $res;
     }
 
-    public function getUsers($pageSize, $page)
+    public function getUsers($pageSize, $page): array
     {
         return $this
             ->setSelect('`users`.`id`, `users`.`login`, `users`.`password`, `users`.`name`, `groups`.`cod`')
@@ -25,5 +25,12 @@ class UserModel extends DbEntity
             ->setOrderBy('`groups`.`name`')
             ->setPageSize($pageSize)
             ->getPage($page);
+    }
+
+    public function getCrc($user_id): string
+    {
+        /** @var array $res */
+        $res = $this->runSQL("SELECT `id`, `password` FROM `users` WHERE `id`= $user_id");
+        return (!empty($res)) ? $res[0]['password'] : '';
     }
 }

@@ -12,5 +12,4 @@ class Config
     const QUESTIONS_COUNT = 20;
     const TIME_ZONE = "Europe/Minsk";
     public const SALT = 'my_secret_word';
-
 }

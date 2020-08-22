@@ -39,6 +39,7 @@ class UsersController extends AbstractTableController
 
     public function actionShowEdit(array $data)
     {
+        $_SESSION['crc'] = $this->table->getCrc($data['get']['id']);
         parent::actionShowEdit($data);
         $this->view->addData([
             'groupsList' => $this->table->getGroups()
@@ -53,7 +54,10 @@ class UsersController extends AbstractTableController
 
     public function actionEdit(array $data)
     {
-        $data['post']['password'] = md5(md5($data['post']['password']) . Config::SALT);
+        $data['post']['password'] = (
+            !empty($data['post']['password']) and
+            ($_SESSION['crc'] != md5(md5($data['post']['password']) . Config::SALT))
+        ) ? md5(md5($data['post']['password']) . Config::SALT) : $_SESSION['crc'];
         parent::actionEdit($data);
     }
 
