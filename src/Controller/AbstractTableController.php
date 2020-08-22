@@ -13,6 +13,7 @@ abstract class AbstractTableController extends AbstractController
     protected $view; // View
     protected $tableName;
     protected $templateFolder;
+    protected $alink;
 
     public function __construct(View $view, mysqli $link)
     {
@@ -23,6 +24,7 @@ abstract class AbstractTableController extends AbstractController
 
         parent::__construct($view);
         $this->view->setFolder($this->templateFolder);
+        $this->alink = $link;
     }
 
     public function actionShow(array $data)
@@ -81,7 +83,11 @@ abstract class AbstractTableController extends AbstractController
     {
         $editData = $data['post'];
         unset($editData['id']);
-
+        $editData['content'] = $this->alink->real_escape_string($editData['content']);
+        $editData['answer1'] = $this->alink->real_escape_string($editData['answer1']);
+        $editData['answer2'] = $this->alink->real_escape_string($editData['answer2']);
+        $editData['answer3'] = $this->alink->real_escape_string($editData['answer3']);
+        $editData['answer4'] = $this->alink->real_escape_string($editData['answer4']);
         $this->table->edit(['id' => $data['post']['id']], $editData);
         $this->redirect('?action=show&type=' . $this->getClassName());
     }

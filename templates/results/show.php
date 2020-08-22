@@ -24,6 +24,7 @@ unset($comments['student_id']);
 
 $comments = ['class' => 'Class'] + $comments;
 $comments = ['student_id' => 'Student'] + $comments;
+$comments[] = 'Grade';
 
 echo Html::Table()
     ->setHeaders($comments)

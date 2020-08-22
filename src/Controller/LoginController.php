@@ -38,7 +38,6 @@ class LoginController extends AbstractController
 
         if (!empty($user)) {
             $_SESSION['user'] = $user;
-
             $this->redirect('?action=show&type=results');
         } else {
             $this->redirect('?action=defaultform&type=default');
